@@ -1,3 +1,9 @@
+import { TextEditor } from '@/components/resources';
+
 export default function HomePage() {
-  return <>Home</>;
+  return (
+    <>
+      <TextEditor />
+    </>
+  );
 }
