@@ -1,0 +1,266 @@
+:root {
+  --white: #fff;
+  --black: #2e2b29;
+  --black-contrast: #110f0e;
+  --gray-1: rgba(61, 37, 20, 0.05);
+  --gray-2: rgba(61, 37, 20, 0.08);
+  --gray-3: rgba(61, 37, 20, 0.12);
+  --gray-4: rgba(53, 38, 28, 0.3);
+  --gray-5: rgba(28, 25, 23, 0.6);
+  --purple: #6a00f5;
+  --purple-contrast: #5800cc;
+  --purple-light: rgba(88, 5, 255, 0.05);
+  --yellow-contrast: #facc15;
+  --yellow: rgba(250, 204, 21, 0.4);
+  --yellow-light: #fffae5;
+  --red: #ff5c33;
+  --red-light: #ffebe5;
+}
+
+#text-editor--input a {
+  pointer-events: none;
+  cursor: text;
+}
+
+/* Basic editor styles */
+.text-editor--content {
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: break-spaces;
+}
+
+.text-editor--content:first-child {
+  margin-top: 0;
+}
+
+/* List styles */
+.text-editor--content ul,
+.text-editor--content ol {
+  list-style: revert;
+  padding: 0 1rem;
+  margin: 1.25rem 1rem 1.25rem 0.4rem;
+}
+
+.text-editor--content ul li p,
+.text-editor--content ol li p {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+/* Heading styles */
+.text-editor--content h1,
+.text-editor--content h2,
+.text-editor--content h3,
+.text-editor--content h4,
+.text-editor--content h5,
+.text-editor--content h6 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  text-wrap: pretty;
+}
+
+.text-editor--content h1 {
+  font-size: 32px;
+}
+
+.text-editor--content h2 {
+  font-size: 24px;
+}
+
+.text-editor--content h3 {
+  font-size: 20px;
+}
+
+.text-editor--content h4 {
+  font-size: 16px;
+}
+
+.text-editor--content h5 {
+  font-size: 14px;
+}
+
+.text-editor--content h6 {
+  font-size: 12px;
+}
+
+/* Code and preformatted text styles */
+.text-editor--content code {
+  background-color: var(--purple-light);
+  border-radius: 0.4rem;
+  color: var(--black);
+  font-size: 0.85rem;
+  padding: 0.25em 0.3em;
+}
+
+.text-editor--content pre {
+  background: var(--black);
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-family: 'JetBrainsMono', monospace;
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+}
+
+.text-editor--content pre code {
+  background: none;
+  color: inherit;
+  font-size: 0.8rem;
+  padding: 0;
+}
+
+.text-editor--content blockquote {
+  border-left: 3px solid var(--gray-3);
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+}
+
+.text-editor--content hr {
+  border: none;
+  border-top: 1px solid var(--gray-2);
+  margin: 2rem 0;
+}
+
+.text-editor--content a {
+  color: var(--purple);
+  text-decoration: revert;
+}
+
+.text-editor--content a:hover {
+  color: var(--purple-contrast);
+}
+
+.text-editor--content table {
+  border-collapse: collapse;
+  margin: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.text-editor--content table td,
+.text-editor--content table th {
+  border: 1px solid var(--gray-3);
+  box-sizing: border-box;
+  min-width: 1em;
+  padding: 6px 8px;
+  position: relative;
+  vertical-align: top;
+}
+
+.text-editor--content table th {
+  background-color: var(--gray-1);
+  font-weight: bold;
+  text-align: left;
+}
+
+.text-editor--content table .selectedCell:after {
+  background: var(--gray-2);
+  content: '';
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.text-editor--content table .column-resize-handle {
+  background-color: var(--purple);
+  bottom: -2px;
+  pointer-events: none;
+  position: absolute;
+  right: -2px;
+  top: 0;
+  width: 4px;
+}
+
+.text-editor--content .tableWrapper {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.text-editor--content .resize-cursor {
+  cursor: ew-resize;
+  cursor: col-resize;
+}
+
+/* Mathematics extension styles */
+.tiptap-mathematics-render {
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+}
+
+/* Editable state */
+.tiptap-mathematics-render--editable {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tiptap-mathematics-render--editable:hover {
+  background: #eee;
+}
+
+/* Inline math */
+.tiptap-mathematics-render[data-type='inline-math'] {
+  display: inline-block;
+}
+
+/* Block math */
+.tiptap-mathematics-render[data-type='block-math'] {
+  display: block;
+  margin: 1rem 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Error states */
+.tiptap-mathematics-render.inline-math-error,
+.tiptap-mathematics-render.block-math-error {
+  background: var(--red-light);
+  color: var(--red);
+  border: 1px solid var(--red-dark);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+ul,
+ol {
+  padding: 0 1rem;
+  margin: 1.25rem 1rem 1.25rem 0.4rem;
+}
+
+ul li p,
+ol li p {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+ul[data-type='taskList'] {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+ul[data-type='taskList'] li {
+  align-items: flex-start;
+  display: flex;
+}
+
+ul[data-type='taskList'] li > label {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+  user-select: none;
+}
+
+ul[data-type='taskList'] li > div {
+  flex: 1 1 auto;
+}
+
+ul[data-type='taskList'] input[type='checkbox'] {
+  cursor: pointer;
+}
+
+ul[data-type='taskList'] ul[data-type='taskList'] {
+  margin: 0;
+}
