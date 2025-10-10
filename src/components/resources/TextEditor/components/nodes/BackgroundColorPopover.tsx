@@ -15,7 +15,8 @@ export function BackgroundColorPopover() {
     editor,
     selector: (ctx) => {
       return {
-        value: ctx.editor.getAttributes('textStyle').backgroundColor ?? '#000',
+        value:
+          ctx.editor.getAttributes('textStyle').backgroundColor ?? 'initial',
         isBackgroundColor:
           ctx.editor.isActive('textStyle', { backgroundColor: '' }) ?? false,
         canBackgroundColor: ctx.editor

@@ -2,7 +2,7 @@
 
 import { TextEditorContent, TextEditorMenu } from './components';
 import { TextEditorProvider } from './providers';
-import './styles/editor.css';
+import './styles/editor.scss';
 
 export function TextEditor() {
   return (

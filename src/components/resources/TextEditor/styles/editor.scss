@@ -62,23 +62,18 @@
 .text-editor--content h1 {
   font-size: 32px;
 }
-
 .text-editor--content h2 {
   font-size: 24px;
 }
-
 .text-editor--content h3 {
   font-size: 20px;
 }
-
 .text-editor--content h4 {
   font-size: 16px;
 }
-
 .text-editor--content h5 {
   font-size: 14px;
 }
-
 .text-editor--content h6 {
   font-size: 12px;
 }
@@ -129,6 +124,7 @@
   color: var(--purple-contrast);
 }
 
+/* Table styles */
 .text-editor--content table {
   border-collapse: collapse;
   margin: 0;
@@ -185,38 +181,34 @@
   cursor: col-resize;
 }
 
-/* Mathematics extension styles */
-.tiptap-mathematics-render {
+/* Mathematics */
+.text-editor--content .tiptap-mathematics-render {
   padding: 0 0.25rem;
   border-radius: 0.25rem;
 }
 
-/* Editable state */
-.tiptap-mathematics-render--editable {
+.text-editor--content .tiptap-mathematics-render--editable {
   cursor: pointer;
   transition: background 0.2s;
 }
 
-.tiptap-mathematics-render--editable:hover {
+.text-editor--content .tiptap-mathematics-render--editable:hover {
   background: #eee;
 }
 
-/* Inline math */
-.tiptap-mathematics-render[data-type='inline-math'] {
+.text-editor--content .tiptap-mathematics-render[data-type='inline-math'] {
   display: inline-block;
 }
 
-/* Block math */
-.tiptap-mathematics-render[data-type='block-math'] {
+.text-editor--content .tiptap-mathematics-render[data-type='block-math'] {
   display: block;
   margin: 1rem 0;
   padding: 1rem;
   text-align: center;
 }
 
-/* Error states */
-.tiptap-mathematics-render.inline-math-error,
-.tiptap-mathematics-render.block-math-error {
+.text-editor--content .tiptap-mathematics-render.inline-math-error,
+.text-editor--content .tiptap-mathematics-render.block-math-error {
   background: var(--red-light);
   color: var(--red);
   border: 1px solid var(--red-dark);
@@ -224,43 +216,32 @@
   border-radius: 0.25rem;
 }
 
-ul,
-ol {
-  padding: 0 1rem;
-  margin: 1.25rem 1rem 1.25rem 0.4rem;
-}
-
-ul li p,
-ol li p {
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
-}
-
-ul[data-type='taskList'] {
+/* Task List */
+.text-editor--content ul[data-type='taskList'] {
   list-style: none;
   margin-left: 0;
   padding: 0;
 }
 
-ul[data-type='taskList'] li {
+.text-editor--content ul[data-type='taskList'] li {
   align-items: flex-start;
   display: flex;
 }
 
-ul[data-type='taskList'] li > label {
+.text-editor--content ul[data-type='taskList'] li > label {
   flex: 0 0 auto;
   margin-right: 0.5rem;
   user-select: none;
 }
 
-ul[data-type='taskList'] li > div {
+.text-editor--content ul[data-type='taskList'] li > div {
   flex: 1 1 auto;
 }
 
-ul[data-type='taskList'] input[type='checkbox'] {
+.text-editor--content ul[data-type='taskList'] input[type='checkbox'] {
   cursor: pointer;
 }
 
-ul[data-type='taskList'] ul[data-type='taskList'] {
+.text-editor--content ul[data-type='taskList'] ul[data-type='taskList'] {
   margin: 0;
 }

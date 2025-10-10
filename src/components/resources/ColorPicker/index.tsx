@@ -93,11 +93,13 @@ function ColorPicker({
           <Button
             size="icon"
             className={cn('h-6 w-6 bg-transparent hover:bg-transparent')}
-            onClick={() =>
+            onClick={() => {
               onChange?.({
                 target: { value: 'initial' },
-              } as React.ChangeEvent<HTMLInputElement>)
-            }
+              } as React.ChangeEvent<HTMLInputElement>);
+              setOpen(false);
+              setFocus(false);
+            }}
           >
             <BanIcon className="text-primary h-5 w-5" />
           </Button>
@@ -110,11 +112,13 @@ function ColorPicker({
                 'border-muted h-6 w-6 border',
                 item.value === value && 'border-primary',
               )}
-              onClick={() =>
+              onClick={() => {
                 onChange?.({
                   target: { value: item.value },
-                } as React.ChangeEvent<HTMLInputElement>)
-              }
+                } as React.ChangeEvent<HTMLInputElement>);
+                setOpen(false);
+                setFocus(false);
+              }}
             />
           ))}
         </div>
@@ -129,11 +133,13 @@ function ColorPicker({
                 'border-muted h-6 w-6 border',
                 item.value === value && 'border-primary',
               )}
-              onClick={() =>
+              onClick={() => {
                 onChange?.({
                   target: { value: item.value },
-                } as React.ChangeEvent<HTMLInputElement>)
-              }
+                } as React.ChangeEvent<HTMLInputElement>);
+                setOpen(false);
+                setFocus(false);
+              }}
             />
           ))}
         </div>

@@ -15,7 +15,7 @@ export function ColorPopover() {
     editor,
     selector: (ctx) => {
       return {
-        value: ctx.editor.getAttributes('textStyle').color ?? '#000',
+        value: ctx.editor.getAttributes('textStyle').color ?? 'initial',
         isColor: ctx.editor.isActive('textStyle', { color: '' }) ?? false,
         canColor: ctx.editor.can().chain().setColor(value.trim()).run(),
       };
