@@ -41,11 +41,10 @@ export function TextEditorMenu() {
       <CardContent className="flex flex-wrap items-center gap-2">
         <BoldButton />
         <ItalicButton />
-        <StrikeButton />
         <UnderlineButton />
+        <StrikeButton />
         <CodeButton />
         <HighlightButton />
-        <LinkPopover />
         <SubscriptButton />
         <SuperscriptButton />
 
@@ -54,20 +53,34 @@ export function TextEditorMenu() {
           className="data-[orientation=vertical]:h-6"
         />
 
-        <BlockquoteButton />
-        <BulletListButton />
-        <OrderedListButton />
-        <CodeBlockButton />
-        <HardBreakButton />
-        <HeadingDropdown />
-        <HorizontalRuleButton />
-        <ImagePopover />
-        <TableDropdown />
+        <LinkPopover />
         <ColorPopover />
         <BackgroundColorPopover />
+
+        <Separator
+          orientation="vertical"
+          className="data-[orientation=vertical]:h-6"
+        />
+
+        <HeadingDropdown />
         <TextAlignDropdown />
-        <MathematicsDialog />
+
+        <BulletListButton />
+        <OrderedListButton />
         <TaskListButton />
+        <BlockquoteButton />
+        <TableDropdown />
+
+        <Separator
+          orientation="vertical"
+          className="data-[orientation=vertical]:h-6"
+        />
+
+        <HorizontalRuleButton />
+        <ImagePopover />
+        <CodeBlockButton />
+        <MathematicsDialog />
+        <HardBreakButton />
 
         <Separator
           orientation="vertical"
