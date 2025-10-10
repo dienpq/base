@@ -22,226 +22,249 @@
   cursor: text;
 }
 
-/* Basic editor styles */
 .text-editor--content {
-  font-size: 1rem;
-  line-height: 1.5;
-  white-space: break-spaces;
-}
+  :first-child {
+    margin-top: 0;
+  }
 
-.text-editor--content:first-child {
-  margin-top: 0;
-}
+  code {
+    background-color: var(--purple-light);
+    border-radius: 0.4rem;
+    color: var(--black);
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+  }
 
-/* List styles */
-.text-editor--content ul,
-.text-editor--content ol {
-  list-style: revert;
-  padding: 0 1rem;
-  margin: 1.25rem 1rem 1.25rem 0.4rem;
-}
+  mark {
+    background-color: #faf594;
+    border-radius: 0.4rem;
+    box-decoration-break: clone;
+    padding: 0.1rem 0.3rem;
+  }
 
-.text-editor--content ul li p,
-.text-editor--content ol li p {
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
-}
+  a {
+    color: var(--purple);
+    cursor: pointer;
 
-/* Heading styles */
-.text-editor--content h1,
-.text-editor--content h2,
-.text-editor--content h3,
-.text-editor--content h4,
-.text-editor--content h5,
-.text-editor--content h6 {
-  margin-top: 16px;
-  margin-bottom: 8px;
-  text-wrap: pretty;
-}
+    &:hover {
+      color: var(--purple-contrast);
+    }
+  }
 
-.text-editor--content h1 {
-  font-size: 32px;
-}
-.text-editor--content h2 {
-  font-size: 24px;
-}
-.text-editor--content h3 {
-  font-size: 20px;
-}
-.text-editor--content h4 {
-  font-size: 16px;
-}
-.text-editor--content h5 {
-  font-size: 14px;
-}
-.text-editor--content h6 {
-  font-size: 12px;
-}
+  blockquote {
+    border-left: 3px solid var(--gray-3);
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+  }
 
-/* Code and preformatted text styles */
-.text-editor--content code {
-  background-color: var(--purple-light);
-  border-radius: 0.4rem;
-  color: var(--black);
-  font-size: 0.85rem;
-  padding: 0.25em 0.3em;
-}
+  ul,
+  ol {
+    list-style: revert;
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
 
-.text-editor--content pre {
-  background: var(--black);
-  border-radius: 0.5rem;
-  color: var(--white);
-  font-family: 'JetBrainsMono', monospace;
-  margin: 1.5rem 0;
-  padding: 0.75rem 1rem;
-}
+    li p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+  }
 
-.text-editor--content pre code {
-  background: none;
-  color: inherit;
-  font-size: 0.8rem;
-  padding: 0;
-}
+  pre {
+    background: var(--black);
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-family: 'JetBrainsMono', monospace;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
 
-.text-editor--content blockquote {
-  border-left: 3px solid var(--gray-3);
-  margin: 1.5rem 0;
-  padding-left: 1rem;
-}
+    code {
+      background: none;
+      color: inherit;
+      font-size: 0.8rem;
+      padding: 0;
+    }
+  }
 
-.text-editor--content hr {
-  border: none;
-  border-top: 1px solid var(--gray-2);
-  margin: 2rem 0;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+    margin-top: 2.5rem;
+    text-wrap: pretty;
+  }
 
-.text-editor--content a {
-  color: var(--purple);
-  text-decoration: revert;
-}
+  h1,
+  h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-.text-editor--content a:hover {
-  color: var(--purple-contrast);
-}
+  h1 {
+    font-size: 1.4rem;
+  }
 
-/* Table styles */
-.text-editor--content table {
-  border-collapse: collapse;
-  margin: 0;
-  overflow: hidden;
-  table-layout: fixed;
-  width: 100%;
-}
+  h2 {
+    font-size: 1.2rem;
+  }
 
-.text-editor--content table td,
-.text-editor--content table th {
-  border: 1px solid var(--gray-3);
-  box-sizing: border-box;
-  min-width: 1em;
-  padding: 6px 8px;
-  position: relative;
-  vertical-align: top;
-}
+  h3 {
+    font-size: 1.1rem;
+  }
 
-.text-editor--content table th {
-  background-color: var(--gray-1);
-  font-weight: bold;
-  text-align: left;
-}
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
 
-.text-editor--content table .selectedCell:after {
-  background: var(--gray-2);
-  content: '';
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  pointer-events: none;
-  position: absolute;
-  z-index: 2;
-}
+  hr {
+    border: none;
+    border-top: 1px solid var(--gray-2);
+    cursor: pointer;
+    margin: 2rem 0;
 
-.text-editor--content table .column-resize-handle {
-  background-color: var(--purple);
-  bottom: -2px;
-  pointer-events: none;
-  position: absolute;
-  right: -2px;
-  top: 0;
-  width: 4px;
-}
+    &.ProseMirror-selectednode {
+      border-top: 1px solid var(--purple);
+    }
+  }
 
-.text-editor--content .tableWrapper {
-  margin: 1.5rem 0;
-  overflow-x: auto;
-}
+  img {
+    display: block;
+    height: auto;
+    margin: 1.5rem 0;
+    max-width: 100%;
 
-.text-editor--content .resize-cursor {
-  cursor: ew-resize;
-  cursor: col-resize;
-}
+    &.ProseMirror-selectednode {
+      outline: 3px solid var(--purple);
+    }
+  }
 
-/* Mathematics */
-.text-editor--content .tiptap-mathematics-render {
-  padding: 0 0.25rem;
-  border-radius: 0.25rem;
-}
+  .tiptap-mathematics-render {
+    padding: 0 0.25rem;
 
-.text-editor--content .tiptap-mathematics-render--editable {
-  cursor: pointer;
-  transition: background 0.2s;
-}
+    &--editable {
+      cursor: pointer;
+      transition: background 0.2s;
 
-.text-editor--content .tiptap-mathematics-render--editable:hover {
-  background: #eee;
-}
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
 
-.text-editor--content .tiptap-mathematics-render[data-type='inline-math'] {
-  display: inline-block;
-}
+  .tiptap-mathematics-render {
+    border-radius: 0.25rem;
 
-.text-editor--content .tiptap-mathematics-render[data-type='block-math'] {
-  display: block;
-  margin: 1rem 0;
-  padding: 1rem;
-  text-align: center;
-}
+    &[data-type='inline-math'] {
+      display: inline-block;
+    }
 
-.text-editor--content .tiptap-mathematics-render.inline-math-error,
-.text-editor--content .tiptap-mathematics-render.block-math-error {
-  background: var(--red-light);
-  color: var(--red);
-  border: 1px solid var(--red-dark);
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-}
+    &[data-type='block-math'] {
+      display: block;
+      margin: 1rem 0;
+      padding: 1rem;
+      text-align: center;
+    }
 
-/* Task List */
-.text-editor--content ul[data-type='taskList'] {
-  list-style: none;
-  margin-left: 0;
-  padding: 0;
-}
+    &.inline-math-error,
+    &.block-math-error {
+      background: var(--red-light);
+      color: var(--red);
+      border: 1px solid var(--red-dark);
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+    }
+  }
 
-.text-editor--content ul[data-type='taskList'] li {
-  align-items: flex-start;
-  display: flex;
-}
+  table {
+    border-collapse: collapse;
+    margin: 0;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 100%;
 
-.text-editor--content ul[data-type='taskList'] li > label {
-  flex: 0 0 auto;
-  margin-right: 0.5rem;
-  user-select: none;
-}
+    td,
+    th {
+      border: 1px solid var(--gray-3);
+      box-sizing: border-box;
+      min-width: 1em;
+      padding: 6px 8px;
+      position: relative;
+      vertical-align: top;
 
-.text-editor--content ul[data-type='taskList'] li > div {
-  flex: 1 1 auto;
-}
+      > * {
+        margin-bottom: 0;
+      }
+    }
 
-.text-editor--content ul[data-type='taskList'] input[type='checkbox'] {
-  cursor: pointer;
-}
+    th {
+      background-color: var(--gray-1);
+      font-weight: bold;
+      text-align: left;
+    }
 
-.text-editor--content ul[data-type='taskList'] ul[data-type='taskList'] {
-  margin: 0;
+    .selectedCell:after {
+      background: var(--gray-2);
+      content: '';
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .column-resize-handle {
+      background-color: var(--purple);
+      bottom: -2px;
+      pointer-events: none;
+      position: absolute;
+      right: -2px;
+      top: 0;
+      width: 4px;
+    }
+  }
+
+  .tableWrapper {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+
+  &.resize-cursor {
+    cursor: ew-resize;
+    cursor: col-resize;
+  }
+
+  ul[data-type='taskList'] {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+
+    li {
+      align-items: flex-start;
+      display: flex;
+
+      > label {
+        flex: 0 0 auto;
+        margin-right: 0.5rem;
+        user-select: none;
+      }
+
+      > div {
+        flex: 1 1 auto;
+      }
+    }
+
+    input[type='checkbox'] {
+      cursor: pointer;
+    }
+
+    ul[data-type='taskList'] {
+      margin: 0;
+    }
+  }
 }
